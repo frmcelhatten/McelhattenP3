@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pick Your Music</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script> 
+        function goToGenre(event) {
+            event.preventDefault();
+            const genre = document.querySelector('input[name=genre]:checked');
+            if (genre) {
+                window.location.href = genre.value + ".html";
+            } else {
+                alert("Please select a music genre.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <marquee>Find Your Musical Fortune Here!</marquee>
+   <b><div class="header">Tell Us About Yourself!</div></b>
+
+    <form onsubmit="goToGenre(event)">
+        <table>
+<tr><td>Username:</td><td><input type="text" name="username" required></td></tr>
+<tr><td>Age:</td><td><input type="number" name="age" required></td></tr>
+<tr><td colspan="2">
+        <p><strong>Select your favorite music:</strong></p>
+    <label><input type="radio" name="genre" value="rock"> Rock 🎸</label><br>
+    <label><input type="radio" name="genre" value="country"> Country 🤠 <label><br>
+    <label><input type="radio" name="genre" value="Funk"> Funk 🕺<label><br><br>
+            <input type="submit" value="Submit">
+</td></tr>
+    </table>
+    </form>
+             <audio controls autoplay>
+        <source src="audio/home.mp3" type="audio/ogg">
+    <source src="audio/home.mp3" type="audio/mpeg">
+            </audio>
+</body>
+</html>
